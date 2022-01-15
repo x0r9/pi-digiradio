@@ -36,8 +36,7 @@ server {
             proxy_set_header Connection "upgrade"; 
         }
         
-        include /etc/nginx/acme-catch-location;
-        include /etc/nginx/default-listen-ssl;
+        include /etc/nginx/acme-catch-location; # For certbot http verification
         ssl_certificate /etc/letsencrypt/self-signed.crt; # managed by Certbot
         ssl_certificate_key /etc/letsencrypt/self-signed.pem; # managed by Certbot
 

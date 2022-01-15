@@ -4,8 +4,8 @@ services:
         image: nginx
         container_name: nginx
         ports:
-        - "80"
-        - "443"
+        - "80:80"
+        - "443:433"
         volumes:
         - ./etc/nginx:/etc/nginx
         - ./www:/var/www
@@ -16,7 +16,7 @@ services:
             
     digiradio-v:
         build:
-            context: apps/digiradio-v
+            context: digiradio-v
             dockerfile: Dockerfile
         container_name: digiradio-v
         volumes:

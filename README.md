@@ -15,7 +15,8 @@ Then checkout, build and run!
 git clone https://github.com/x0r9/pi-digiradio.git
 cd pi-digiradio
 sudo docker-compose build
-sudo docker-compose run
+./certbot-selfsign.sh
+sudo docker-compose up
 ```
 
 

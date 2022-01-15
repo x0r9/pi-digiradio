@@ -1,0 +1,42 @@
+{
+  "map":
+  {
+      "center_start": [51.5008, -0.1245],
+      "qth_latlon": [51.4780, 0.0000],
+      "qth_symbol": "\\#",
+      "qth_name": "YOUR-CALL",
+      "zoom_start":7,
+      "default_tiles": "geo_json"
+
+  },
+  "map_tiles":
+  {
+      "geo_json":
+      {
+        "layer_type": "geojson",
+        "url": "/offline-maps/geojson-world/all_small.json",
+        "opts": {
+          "style": {
+            "fill": true,
+            "color":"#000",
+            "fillColor": "#fff",
+            "fillOpacity": 0.4
+          }
+        }
+      }
+  },
+  "root_path": "digiradio-v",
+  "redis":
+  {
+    "host":"redis",
+    "port": 6379
+  },
+  "apikeys":
+  {
+    "change-this-key":
+    {
+      "station_name": "QTH",
+      "modes": ["aprs"]
+    }
+  }
+}
