@@ -1,0 +1,33 @@
+version: '3'
+services:
+    nginx:
+        image: nginx
+        container_name: nginx
+        ports:
+        - "80"
+        - "443"
+        volumes:
+        - ./etc/nginx:/etc/nginx
+        - ./www:/var/www
+        - ./etc/letsencrypt:/etc/letsencrypt
+        - ./var/log/nginx:/var/log/nginx
+        links:
+        - "digiradio-v:digiradio-v"
+            
+    digiradio-v:
+        build:
+            context: apps/digiradio-v
+            dockerfile: Dockerfile
+        container_name: digiradio-v
+        volumes:
+        - ./etc/digiradio-v:/etc/digiradio-v
+        links:
+        - "redis:redis"
+    redis:
+        image: redis:6.2
+        container_name: redis
+        volumes:
+        - ./etc/redis:/etc/redis
+        - ./var/redis:/var/redis
+        command: ["redis-server", "/etc/redis/redis.conf"]
+    

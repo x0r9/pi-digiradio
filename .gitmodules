@@ -1,0 +1,3 @@
+[submodule "digiradio-v"]
+	path = digiradio-v
+	url = https://github.com/x0r9/digiradio-v.git

@@ -1,0 +1,6 @@
+# This is to be included in all server settings in sites-enabled with let's encrypt
+#Let's Encrypt certbox ACME challenge
+location /.well-known/acme-challenge/ {
+    root /var/www/certbot;
+}
+
