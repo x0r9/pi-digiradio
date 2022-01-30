@@ -1,0 +1,13 @@
+[Unit]
+Description=Direwold Deamon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/user/pi-digiradio/
+ExecStart=/usr/bin/direwolf -c etc/direwolf/direwolf.conf
+
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
